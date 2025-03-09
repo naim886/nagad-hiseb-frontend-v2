@@ -1,0 +1,48 @@
+@import 'variables';
+@import 'mixin';
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Anton", sans-serif;
+    color: $primary-color; // Use theme color for headings
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+.sb-sidenav, .sb-topnav {
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link {
+    color: #272727;
+    font-size: 14px;
+    padding: 4px 16px;
+}
