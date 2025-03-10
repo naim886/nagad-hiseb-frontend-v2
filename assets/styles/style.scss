@@ -1,5 +1,6 @@
-@import 'variables';
-@import 'mixin';
+@use 'variables' as vars;
+@use 'mixin' as mixins;
+@use 'global' as global;
 
 body {
     font-family: "Inter", sans-serif;
@@ -12,7 +13,7 @@ h4,
 h5,
 h6 {
     font-family: "Anton", sans-serif;
-    color: $primary-color; // Use theme color for headings
+    color: vars.$primary-color; // Use theme color for headings
 }
 
 h1,
@@ -33,16 +34,38 @@ a {
     color: inherit;
 
     &:hover {
-        color: $secondary-color;
+        color: vars.$secondary-color;
     }
 }
 
 .sb-sidenav, .sb-topnav {
-    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    background: linear-gradient(135deg, vars.$primary-color, vars.$secondary-color);
 }
 
 .sb-sidenav .sb-sidenav-menu .nav .nav-link {
     color: #272727;
     font-size: 14px;
     padding: 4px 16px;
+}
+
+
+.auth-wrapper{
+    background: linear-gradient(135deg, vars.$primary-color, vars.$secondary-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .auth-card{
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    }
+    .password-eye-button{
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
 }

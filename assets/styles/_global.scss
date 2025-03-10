@@ -1,0 +1,41 @@
+@use 'variables' as vars;
+@use 'mixin' as mixins;
+
+
+.form-control{
+    &:focus{
+        border-color: linear-gradient(135deg, vars.$primary-color, vars.$secondary-color);
+        box-shadow: none;
+    }
+}
+
+.theme-button{
+    background: linear-gradient(135deg, vars.$primary-color, vars.$secondary-color);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.5s;
+    font-size: 14px;
+    font-weight: 500;
+    text-shadow: 0 0 5px vars.$primary-color;
+
+    &:hover{
+        background: linear-gradient(135deg, vars.$secondary-color, vars.$primary-color);
+    }
+}
+
+.theme-button-lg{
+    padding: 12px 16px;
+    font-size: 18px;
+}
+
+.form-floating > label{
+    color: vars.$placeholder-color;
+}
+
+.form-floating > .form-control-plaintext ~ label:after, .form-floating > .form-control:focus ~ label:after, .form-floating > .form-control:not(:placeholder-shown) ~ label:after, .form-floating > .form-select ~ label:after{
+    background: transparent;
+}
+
