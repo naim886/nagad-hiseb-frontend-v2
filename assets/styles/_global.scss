@@ -3,9 +3,36 @@
 
 
 .form-control{
+    background: rgba($color: vars.$theme-color, $alpha: .1);
+    color: vars.$theme-color!important;
+    padding-left: 50px!important;
+    border: none;
     &:focus{
-        border-color: linear-gradient(135deg, vars.$primary-color, vars.$secondary-color);
+        border: 1px solid rgba($color: vars.$theme-color, $alpha: .5);
         box-shadow: none;
+        // background: rgba($color: vars.$theme-color, $alpha: .2);
+    }
+}
+.is-invalid{
+    box-shadow: 0 0 5px rgba($color: #ff0000, $alpha: .5);
+}
+.custom-input{
+    position: relative;
+    .custom-input-icon{
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        transform: translateY(-50%);
+        color: vars.$theme-color;
+        font-size: 24px;
+    }
+    .error-message{
+        color: red;
+        font-size: 12px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 32px;
     }
 }
 
@@ -32,7 +59,11 @@
 }
 
 .form-floating > label{
-    color: vars.$placeholder-color;
+    color: rgba($color: vars.$theme-color, $alpha: 0.5);
+    padding-left: 56px;
+    sup{
+        color: rgba(red, 0.5);
+    }
 }
 
 .form-floating > .form-control-plaintext ~ label:after, .form-floating > .form-control:focus ~ label:after, .form-floating > .form-control:not(:placeholder-shown) ~ label:after, .form-floating > .form-select ~ label:after{
